@@ -17,7 +17,7 @@ OBS_DECLARE_MODULE()
 const char *obs_module_name()
 {
     // The full name of the module
-    return s_integration_name.c_str();
+    return s_plugin_name.c_str();
 }
 
 
