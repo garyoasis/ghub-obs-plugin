@@ -17,7 +17,7 @@ OBS_DECLARE_MODULE()
 const char *obs_module_name()
 {
     // The full name of the module
-    return s_integration_name.c_str();
+    return s_plugin_name.c_str();
 }
 
 
@@ -1788,6 +1788,8 @@ void logi::applets::obs_plugin::loop_function()
             fps = static_cast<double_t>(streamed_frames) - static_cast<double_t>(m_total_streamed_frames);
 
             m_total_streamed_frames = streamed_frames;
+
+            obs_output_release(obs_output);
         }
         status_payload["bitrate"] = bps;
         status_payload["framerate"] = fps;
